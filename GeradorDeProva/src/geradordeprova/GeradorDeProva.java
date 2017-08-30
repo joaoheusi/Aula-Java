@@ -24,7 +24,7 @@ public class GeradorDeProva {
         String[] opcoesQuestoes = new String[5];
 
         //pede quantidades, peso,
-        System.out.println("Digite a disciplina da prova:");
+        System.out.println("Por favor, digite a disciplina da prova:");
         Prova p1 = new Prova(s.nextLine());
         System.out.println("Digite a data da prova:");
         p1.setData(s.nextLine());
