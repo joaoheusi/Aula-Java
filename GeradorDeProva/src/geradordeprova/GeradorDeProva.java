@@ -5,6 +5,9 @@
  */
 package geradordeprova;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -22,6 +25,7 @@ public class GeradorDeProva {
         Scanner s = new Scanner(System.in);
         int auxTamanho = 0;
         String[] opcoesQuestoes = new String[5];
+        String yourFileName ="/Users/joaomheusi/NetBeansProjects/Aula-Java/GeradorDeProva/persistencia.txt";
 
         //pede quantidades, peso,
         System.out.println("Por favor, digite a disciplina da prova:");
@@ -44,7 +48,7 @@ public class GeradorDeProva {
                 disc.setPergunta(s.nextLine());
                 System.out.println("Digite o critério para correção da questão discursiva:");
                 disc.setCriteriosCorrecao(s.nextLine());
-                
+
                 p1.getQuestoes().add(disc);
 
             } else if (decisao.equalsIgnoreCase("O")) {
@@ -66,17 +70,32 @@ public class GeradorDeProva {
                 obj.setOpcoes(opcoesQuestoes);
                 System.out.println("Digite qual a opção correta(0...4):");
                 obj.setRespostaCorreta(Integer.parseInt(s.nextLine()));
-                
+
                 p1.getQuestoes().add(obj);
-                
+
             } else if (decisao.equalsIgnoreCase("X")) {
                 break;
             } else {
                 System.out.println("Você entrou uma opção Invalida!!");
             }
         }
-        
+
         System.out.println(p1.obtemDetalhes());
+
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter(yourFileName));
+            writer.write(p1.obtemDetalhes());
+
+        } catch (IOException e) {
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException e) {
+            }
+        }
     }
 
 }
