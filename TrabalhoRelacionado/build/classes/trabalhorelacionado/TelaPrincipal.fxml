@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox id="Calculadora" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhorelacionado.TelaPrincipalController">
+    <HBox fx:id = "boxNum1"> 
+        <Label text = "Número 1:"/>
+        <TextField fx:id = "f1"/>
+    </HBox>
+    <HBox fx:id = "boxNum2"> 
+        <Label text = "Número 2:"/>
+        <TextField fx:id = "f2"/>
+    </HBox>   
+    <HBox> 
+        <Label text = "Resultado:"
+               fx:id = "labl1"/>
+    </HBox>
+    <HBox fx:id = "boxBotoes">
+        <Button text = "Soma"
+                onAction = "#ativarSoma">
+        </Button>
+        <Button text = "Subt"
+                onAction = "#ativarSubt">
+        </Button>
+        <Button text = "Mult"
+                onAction = "#ativarMult">
+        </Button>
+        <Button text = "Divi"
+                onAction = "#ativarDivi">
+            
+        </Button>
+    </HBox>
+        
+</VBox>
