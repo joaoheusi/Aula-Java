@@ -30,7 +30,6 @@ public class TrabalhoRelacionado extends Application{
     @Override
     public void start(Stage primaryStage) throws IOException {
         
-       // try {
         VBox root;
         root =  FXMLLoader.load(getClass().getResource("TelaPrincipal.fxml"));
         Scene scene = new Scene(root, 300, 250);
@@ -38,9 +37,6 @@ public class TrabalhoRelacionado extends Application{
         primaryStage.setTitle("Calculadora");
         primaryStage.setScene(scene);
         primaryStage.show();
-        //} catch(Exception e){
-        //    System.out.println("trau");
-        //}
     }
      public static void main(String[] args){
             launch(args);

@@ -24,12 +24,14 @@ import javafx.scene.text.Text;
  */
 public class TelaPrincipalController implements Initializable {
     
-    public double a, b;
+    public double a, b, c;
     @FXML private Label labl1;
     @FXML private TextField f1;
     @FXML private TextField f2;
+    @FXML private TextField f3;
     @FXML private HBox boxNum1;
     @FXML private HBox boxNum2;
+    @FXML private HBox boxNum3;
     @FXML private HBox boxBotoes;
     
     
@@ -44,40 +46,54 @@ public class TelaPrincipalController implements Initializable {
     }
     
     @FXML
-    public void ativarSoma(){       
+    public void ativarPL(){       
        try{
          a = Double.parseDouble(f1.getText());
          b = Double.parseDouble(f2.getText());
+         
         }catch(NumberFormatException ex){
 }
-        labl1.setText("Resultado: " + (a+b));
+        labl1.setText("Resultado: " + (2*a+2*b)+"cm");
     }
     @FXML
-    public void ativarSubt(){
+    public void ativarPT(){
+        //try{
+         a = Double.parseDouble(f1.getText());
+         b = Double.parseDouble(f2.getText());
+         c = Double.parseDouble(f3.getText());
+       // }catch(NumberFormatException ex){
+//}
+        labl1.setText("Resultado: " + (2*b+2*c)+"cm");
+    }
+    @FXML
+    public void ativarAL(){
         try{
          a = Double.parseDouble(f1.getText());
          b = Double.parseDouble(f2.getText());
+         c = Double.parseDouble(f3.getText());
         }catch(NumberFormatException ex){
 }
-        labl1.setText("Resultado: " + (a-b));
+        labl1.setText("Resultado: " + (a*b) + "cmˆ2");
     }
     @FXML
-    public void ativarMult(){
+    public void ativarAT(){
         try{
          a = Double.parseDouble(f1.getText());
          b = Double.parseDouble(f2.getText());
+         c = Double.parseDouble(f3.getText());
         }catch(NumberFormatException ex){
 }
-        labl1.setText("Resultado: " + (a*b));
+        labl1.setText("Resultado: " + (b*c) + "cmˆ2");
     }
     @FXML
-    public void ativarDivi(){
+    public void ativarV(){
         try{
          a = Double.parseDouble(f1.getText());
          b = Double.parseDouble(f2.getText());
+         c = Double.parseDouble(f3.getText());
         }catch(NumberFormatException ex){
 }
-        labl1.setText("Resultado: " + (a/b));
+        labl1.setText("Resultado: " + (a*b*c)+"cmˆ3");
     }
     
     
